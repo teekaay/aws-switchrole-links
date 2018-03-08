@@ -1,0 +1,14 @@
+[default]
+output = json
+region = eu-central-1
+
+[profile base-profile]
+region = eu-central-1
+output = json
+
+[profile admin-profile]
+role_arn = arn:aws:iam::1234567890:role/admin
+source_profile = base-profile
+mfa_serial = arn:aws:iam::0987654321:mfa/mfa-serial
+region = eu-central-1
+
