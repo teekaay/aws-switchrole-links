@@ -21,13 +21,42 @@ and display it as `admin-profile` (see `examples/awscli-config`).
 
     git clone <repo> aws-switchrole-links
     cd aws-switchrole-links
-    cp aws-switchrole-links.py /usr/local/bin/aws-switchrole-links
+    python setup.py install
+
+or 
+  
+    pip install git+https://github.com/teekaay/aws-switchrole-links.git
+
+to install the latest version from Github.
 
 Make sure to have awscli installed (`pip install awscli`) and have configured
 it.
 
 ## Usage
 
-    python aws-switchrole-links.py --help
+    usage: aws-switchrole-links [-h] [--config CONFIG] [--query QUERY]
+                            [--format {json,text}] [--verbose]
 
-is your friend.
+    optional arguments:
+      -h, --help            show this help message and exit
+      --config CONFIG       jmespath expression for filtering output
+      --query QUERY         jmespath expression for filtering output. only used
+                            when output format is json
+      --format {json,text}  output format
+      --verbose             enable verbose logging
+
+### Example
+
+Basic usage
+  
+    $ aws-switchrole-links --format text
+    $ aws-switchrole-links --format json
+    $ aws-switchrole-links --config <path-to-custom-config>
+
+You can also use [JMESPath](http://jmespath.org/) expressions to filter the output.
+
+To find all profiles with name `admin-profile`
+
+    $ aws-switchrole-links --format text --query 'links[?profile.role_name == `admin-profile`]' --config examples/awscli-config
+
+    profile admin-profile: https://signin.aws.amazon.com/switchrole?region=eu-central-1&roleName=admin&displayName=admin-profile&account=1234567890
