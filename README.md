@@ -1,5 +1,7 @@
 # aws-switchrole-links
 
+[![Build Status](https://travis-ci.org/teekaay/aws-switchrole-links.svg?branch=master)](https://travis-ci.org/teekaay/aws-switchrole-links)
+
 `aws-switchrole-links` is a simple script to generate links for easily switching
 roles in the AWS console. It generates links that automatically fill
 in the required fields so you only need to click a single button!
