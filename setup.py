@@ -36,6 +36,9 @@ setup(
     install_requires=[
         'jmespath'
     ],
+    extras_requires={
+        'develop': ['nosetests', 'flake8']
+    },
     entry_points = {
         'console_scripts': [
             'aws-switchrole-links = aws_switchrole_links.__main__:main']
