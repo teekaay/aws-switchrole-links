@@ -4,7 +4,7 @@ test:
 	nosetests
 
 lint: 
-	flake8 $(PROJECT) --exit-zero
+	flake8 $(PROJECT) --exit-zero	
 
 clean:
 	find . -name '*.pyc' -exec rm {} +
