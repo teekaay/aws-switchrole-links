@@ -42,8 +42,6 @@ it.
     optional arguments:
       -h, --help            show this help message and exit
       --config CONFIG       jmespath expression for filtering output
-      --query QUERY         jmespath expression for filtering output. only used
-                            when output format is json
       --format {json,text}  output format
       --verbose             enable verbose logging
 
@@ -51,14 +49,21 @@ it.
 
 Basic usage
   
-    $ aws-switchrole-links --format text
-    $ aws-switchrole-links --format json
-    $ aws-switchrole-links --config <path-to-custom-config>
+    $ aws-switchrole-links --format text --config examples/awscli-config
+    admin-profile :: https://signin.aws.amazon.com/switchrole?region=eu-central-1&roleName=admin&displayName=admin-profile&account=1234567890
 
-You can also use [JMESPath](http://jmespath.org/) expressions to filter the output.
-
-To find all profiles with name `admin-profile`
-
-    $ aws-switchrole-links --format text --query 'links[?profile.role_name == `admin-profile`]' --config examples/awscli-config
-
-    profile admin-profile: https://signin.aws.amazon.com/switchrole?region=eu-central-1&roleName=admin&displayName=admin-profile&account=1234567890
+    $ aws-switchrole-links --format json --config examples/awscli-config
+    {
+        "signinLinks": [
+            {
+            "parameters": {
+                "accountId": "1234567890",
+                "roleName": "admin",
+                "displayName": "admin-profile",
+                "region": "eu-central-1"
+            },
+            "displayName": "admin-profile",
+            "signinUrl": "https://signin.aws.amazon.com/switchrole?region=eu-central-1&roleName=admin&displayName=admin-profile&account=1234567890"
+            }
+        ]
+    }
