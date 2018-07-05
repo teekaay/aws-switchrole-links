@@ -1,6 +1,7 @@
 # aws-switchrole-links
 
 [![Build Status](https://travis-ci.org/teekaay/aws-switchrole-links.svg?branch=master)](https://travis-ci.org/teekaay/aws-switchrole-links)
+[![PyPI version](https://badge.fury.io/py/aws-switchrole-links.svg)](https://badge.fury.io/py/aws-switchrole-links)
 
 `aws-switchrole-links` is a simple script to generate links for easily switching
 roles in the AWS console. It generates links that automatically fill
@@ -21,11 +22,17 @@ and display it as `admin-profile` (see `examples/awscli-config`).
 
 ## Installation
 
+To install the latest release 
+
+    pip install aws-switchrole-links
+
+### From Git Master
+
     git clone https://github.com/teekaay/aws-switchrole-links.git aws-switchrole-links
     cd aws-switchrole-links
     python setup.py install
 
-or 
+### Via Pip from Github
   
     pip install git+https://github.com/teekaay/aws-switchrole-links.git
 
