@@ -36,8 +36,7 @@ it.
 
 ## Usage
 
-    usage: aws-switchrole-links [-h] [--config CONFIG] [--query QUERY]
-                            [--format {json,text}] [--verbose]
+    usage: aws-switchrole-links [-h] [--config CONFIG] [--format {json,text}] [--verbose]
 
     optional arguments:
       -h, --help            show this help message and exit
