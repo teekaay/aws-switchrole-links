@@ -21,7 +21,7 @@ and display it as `admin-profile` (see `examples/awscli-config`).
 
 ## Installation
 
-    git clone <repo> aws-switchrole-links
+    git clone https://github.com/teekaay/aws-switchrole-links.git aws-switchrole-links
     cd aws-switchrole-links
     python setup.py install
 
