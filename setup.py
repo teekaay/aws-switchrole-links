@@ -36,8 +36,8 @@ setup(
     install_requires=[
         
     ],
-    extras_requires={
-        'develop': ['nosetests', 'flake8']
+    extras_require={
+        'develop': ['nose', 'flake8']
     },
     entry_points = {
         'console_scripts': [
