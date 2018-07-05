@@ -15,7 +15,7 @@ setup(
     zip_safe=False,
     version = __versionstr__,
     author = "Thomas Klinger",
-    author_email = "thomas.klinger@protonmail.com",
+    author_email = "teekaay@github.com",
     packages=find_packages(exclude=('test*', )),
     classifiers = [
         "Development Status :: 1 - Planning",
@@ -34,7 +34,7 @@ setup(
     ],
     include_package_data=True,
     install_requires=[
-        'jmespath'
+        
     ],
     extras_requires={
         'develop': ['nosetests', 'flake8']
